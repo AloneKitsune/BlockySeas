@@ -9,8 +9,7 @@ public class HelperMethods {
 
 	public static String getFruit(Entity entity)
 	{
-		String fruit = (entity.getCapability(com.alone.blocky_seas.network.BlockySeasModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new com.alone.blocky_seas.network.BlockySeasModVariables.PlayerVariables())).fruit;
-		return fruit;
+		return (entity.getCapability(com.alone.blocky_seas.network.BlockySeasModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new com.alone.blocky_seas.network.BlockySeasModVariables.PlayerVariables())).fruit;
 	}
 
 	public static boolean hasFlyingFruit(Entity entity)
@@ -26,7 +25,7 @@ public class HelperMethods {
 	{
 		if (entity == null)
 			return false;
-		return !((entity.getCapability(com.alone.blocky_seas.network.BlockySeasModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new com.alone.blocky_seas.network.BlockySeasModVariables.PlayerVariables())).fruit).equals("");
+		return !((entity.getCapability(com.alone.blocky_seas.network.BlockySeasModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new com.alone.blocky_seas.network.BlockySeasModVariables.PlayerVariables())).fruit).isEmpty();
 	}
 
 	public static boolean usingMove(Entity entity)

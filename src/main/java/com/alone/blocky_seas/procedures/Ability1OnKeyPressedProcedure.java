@@ -8,7 +8,7 @@ public class Ability1OnKeyPressedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		Entity player = null;
+		Entity player;
 		player = entity;
 		FruitAbilities.useAbility1(player);
 	}
