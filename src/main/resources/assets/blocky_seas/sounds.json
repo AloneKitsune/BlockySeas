@@ -1,0 +1,10 @@
+{
+  "gameability1": {
+    "sounds": [
+      {
+        "name": "blocky_seas:hit11",
+        "stream": false
+      }
+    ]
+  }
+}

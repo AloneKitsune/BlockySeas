@@ -1,0 +1,7 @@
+{
+  "parent": "blocky_seas:custom/whirlwind_fruit",
+  "textures": {
+    "0": "blocky_seas:block/whirlwind_fruit",
+    "particle": "blocky_seas:block/whirlwind_fruit"
+  }
+}

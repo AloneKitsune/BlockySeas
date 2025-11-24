@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "blocky_seas:block/sigil_alter_bottom",
+    "up": "blocky_seas:block/sigil_alter_top_buggy",
+    "north": "blocky_seas:block/sigil_alter_side",
+    "east": "blocky_seas:block/sigil_alter_side",
+    "south": "blocky_seas:block/sigil_alter_side",
+    "west": "blocky_seas:block/sigil_alter_side",
+    "particle": "blocky_seas:block/sigil_alter_bottom"
+  },
+  "render_type": "solid"
+}

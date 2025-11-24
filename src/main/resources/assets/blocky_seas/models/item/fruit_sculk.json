@@ -1,0 +1,7 @@
+{
+  "parent": "blocky_seas:custom/sculkfruit",
+  "textures": {
+    "1": "blocky_seas:block/sculk_fruit",
+    "particle": "minecraft:item/silence_armor_trim_smithing_template"
+  }
+}

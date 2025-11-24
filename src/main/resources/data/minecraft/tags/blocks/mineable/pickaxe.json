@@ -1,0 +1,15 @@
+{
+  "values":
+  [
+    "blocky_seas:fools_iron_block",
+    "blocky_seas:fools_gold_block",
+    "blocky_seas:fools_copper_block",
+    "blocky_seas:fools_diamond_block",
+    "blocky_seas:fools_emerald_block",
+    "blocky_seas:fools_lapis_block",
+    "blocky_seas:fools_coal_block",
+    "blocky_seas:fools_redstone_block",
+    "blocky_seas:fools_netherite_block"
+  ]
+
+}

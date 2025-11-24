@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C#",
+    "CRC",
+    "#C#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:flint"
+    },
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "R": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "result": {
+    "item": "blocky_seas:fools_netherite_block",
+    "count": 4
+  }
+}

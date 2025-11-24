@@ -1,0 +1,7 @@
+{
+  "parent": "blocky_seas:custom/bombfruit",
+  "textures": {
+    "0": "blocky_seas:block/bombfruit",
+    "particle": "blocky_seas:block/bombfruit"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "blocky_seas:custom/temp_portal",
+  "textures": {
+    "all": "blocky_seas:block/temp_portal",
+    "particle": "blocky_seas:block/temp_portal",
+    "0": "blocky_seas:block/temp_portal"
+  },
+  "render_type": "cutout"
+}

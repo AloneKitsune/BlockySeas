@@ -1,0 +1,7 @@
+{
+  "parent": "blocky_seas:custom/gamefruit",
+  "textures": {
+    "0": "blocky_seas:block/gamefruit",
+    "particle": "minecraft:item/friend_pottery_sherd"
+  }
+}

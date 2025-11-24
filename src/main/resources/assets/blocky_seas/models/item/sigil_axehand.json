@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "blocky_seas:item/axe_hand_sigil"
+  }
+}

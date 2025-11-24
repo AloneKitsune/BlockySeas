@@ -1,0 +1,71 @@
+{
+  "gamerule.doSeasickness": "doSeasickness",
+  "effect.blocky_seas.seasickness": "Seasickness",
+  "gamerule.doSeasickness.description": "Enables Seasickness",
+
+
+  "item.blocky_seas.darkroot": "Darkroot",
+  "item.blocky_seas.fruit_whirlwind": "Whirlwind Fruit",
+  "item.blocky_seas.fruit_bomb": "Bomb Fruit",
+  "item.blocky_seas.fruit_sculk": "Sculk Fruit",
+  "item.blocky_seas.fruit_game": "Fruit Game",
+
+
+  "item.blocky_seas.sigil_buggy": "Sigil Buggy",
+  "item.blocky_seas.sigil_axehand": "Sigil Axe Hand",
+
+  "key.blocky_seas.ability_1": "Use Ability 1",
+  "key.blocky_seas.ability_2": "Use Ability 2",
+  "key.blocky_seas.ability_3": "Use Ability 3",
+
+  "block.blocky_seas.sigil_alter": "Sigil Alter",
+  "block.blocky_seas.buggy_sigil_alter": "Buggy Sigil Alter",
+  "block.blocky_seas.axehand_sigil_alter": "Axehand Alter",
+
+  "block.blocky_seas.fools_iron_block": "Block of Iron",
+  "block.blocky_seas.fools_gold_block": "Block of Gold",
+  "block.blocky_seas.fools_copper_block": "Block of Copper",
+  "block.blocky_seas.fools_diamond_block": "Block of Diamond",
+  "block.blocky_seas.fools_emerald_block": "Block of Emerald",
+  "block.blocky_seas.fools_lapis_block": "Block of Lapiz Lazuli",
+  "block.blocky_seas.fools_coal_block": "Block of Coal",
+  "block.blocky_seas.fools_redstone_block": "Block of Redstone",
+  "block.blocky_seas.fools_netherite_block": "Block of Netherite",
+
+
+  "tooltip.blocky_seas.fools_block.tooltip": "Congratulations! You Found Nothing...",
+  "tooltip.blocky_seas.fruit.tooltip": "A Wierd Fruit... Wonder What Happens If I Eat It.",
+  "tooltip.blocky_seas.common.tooltip": "[ Common ]",
+  "tooltip.blocky_seas.uncommon.tooltip": "[ Uncommon ]",
+  "tooltip.blocky_seas.rare.tooltip": "[ Rare ]",
+  "tooltip.blocky_seas.legendary.tooltip": "[ Legendary ]",
+  "tooltip.blocky_seas.paramecia.tooltip": "| Paramecia |",
+  "tooltip.blocky_seas.zoan.tooltip": "| Zoan |",
+  "tooltip.blocky_seas.logia.tooltip": "| Logia |",
+
+  "item.blocky_seas.white_berry": "Moonberry",
+  "item.blocky_seas.red_berry": "Bloodberry",
+  "item.blocky_seas.purple_berry": "Gloomberry",
+  "item.blocky_seas.pink_berry": "Wispberry",
+  "item.blocky_seas.orange_berry": "Dewberry",
+  "item.blocky_seas.yellow_berry": "Sunberry",
+  "item.blocky_seas.green_berry": "Bloomberry",
+  "item.blocky_seas.blue_berry": "Frostberry",
+  "item.blocky_seas.black_berry": "Galaxyberry",
+  "block.blocky_seas.berry_bush": "Berry Bush Seedling",
+
+  "item.blocky_seas.cutlass": "Cutlass",
+  "item.blocky_seas.dagger": "Dagger",
+
+  "item.blocky_seas.seaprism_shard": "Seaprism Shard",
+  "block.blocky_seas.tempportal": "Tempportal",
+
+  "subtitles.gameability1": "Game Fires",
+  "key.blocky_seas.open_menu": "Open Menu",
+  "key.categories.blocky_seas": "Blocky Seas",
+
+  "item_group.blocky_seas.blocky_seas": "Blocky Seas",
+
+  "gui.blocky_seas.menu.label_menu": "Menu",
+  "gui.blocky_seas.menu.button_abilities": "Abilities"
+}

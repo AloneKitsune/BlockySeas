@@ -1,0 +1,54 @@
+package com.alone.blocky_seas.procedures;
+
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.client.Minecraft;
+
+public class FruitMainProcedure {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
+			return;
+		// If the player is not in water
+		if (HelperMethods.hasFlyingFruit(entity) && !entity.isUnderWater()) {
+			if (entity instanceof Player _player) {
+				_player.getAbilities().mayfly = true;
+				_player.onUpdateAbilities();
+			}
+			FlyingEffectsProcedure.execute(world, x, y, z, entity);
+		} else {
+			if (!(new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayer _serverPlayer) {
+						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+					}
+					return false;
+				}
+			}.checkGamemode(entity) || new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayer _serverPlayer) {
+						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.SPECTATOR;
+					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.SPECTATOR;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
+				if (entity instanceof Player _player) {
+					_player.getAbilities().mayfly = false;
+					_player.onUpdateAbilities();
+				}
+				if (entity instanceof Player _player) {
+					_player.getAbilities().flying = false;
+					_player.onUpdateAbilities();
+				}
+			}
+		}
+	}
+}

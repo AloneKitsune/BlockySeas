@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "blocky_seas:item/white_berry"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "blocky_seas:item/cool_white_berry"
+    }
+  ]
+}

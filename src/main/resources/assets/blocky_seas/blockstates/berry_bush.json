@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "age=0": { "model": "blocky_seas:block/sapling_assorted_berry_bush" },
+    "age=1": { "model": "blocky_seas:block/shrub_assorted_berry_bush" },
+    "age=2": { "model": "blocky_seas:block/grown_assorted_berry_bush" },
+    "age=3": { "model": "blocky_seas:block/fully_grown_assorted_berry_bush" }
+  }
+}
