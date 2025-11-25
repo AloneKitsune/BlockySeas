@@ -1,5 +1,6 @@
 package com.alone.blocky_seas.client.screens;
 
+import com.alone.blocky_seas.abilitydisplaydata.DisplayData;
 import com.alone.blocky_seas.procedures.HelperMethods;
 
 import net.minecraftforge.fml.common.Mod;
@@ -16,7 +17,7 @@ import net.minecraft.client.Minecraft;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
-import com.alone.blocky_seas.fruitdata.FruitAbilities;
+import com.alone.blocky_seas.abilitydisplaydata.FruitAbilities;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.ArrayList;
@@ -24,23 +25,12 @@ import java.util.ArrayList;
 @Mod.EventBusSubscriber({Dist.CLIENT})
 public class AbilitiesOverlay {
 
-	public static FruitAbilities fruit = new FruitAbilities();
-
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public static void eventHandler(RenderGuiEvent.Pre event) {
 		int w = event.getWindow().getGuiScaledWidth();
 		int h = event.getWindow().getGuiScaledHeight();
 		Level world = null;
-		double x = 0;
-		double y = 0;
-		double z = 0;
 		Player entity = Minecraft.getInstance().player;
-		if (entity != null) {
-			world = entity.level();
-			x = entity.getX();
-			y = entity.getY();
-			z = entity.getZ();
-		}
 		RenderSystem.disableDepthTest();
 		RenderSystem.depthMask(false);
 		RenderSystem.enableBlend();
@@ -49,12 +39,9 @@ public class AbilitiesOverlay {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 
 		
-		
-		if (HelperMethods.hasFruit(entity))
+		// display icons
+		if (HelperMethods.hasFruit(entity) || HelperMethods.holdingAbilityWeapon(entity) && entity != null)
         {
-
-			
-        	
             int textureWidth = 16;
             int textureHeight = 16;
 
@@ -67,10 +54,16 @@ public class AbilitiesOverlay {
             int _y = h - textureHeight - paddingY;
 
 
-			
-            for (int i =0; i < fruit.getFruitArrayList(entity).size(); i++) {
-                event.getGuiGraphics().blit(ResourceLocation.parse(fruit.getAbilityTexture(fruit.getFruitArrayList(entity),i)), _x+i*(16), _y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
-            }
+			// old
+//            for (int i =0; i < DisplayData.getAbilityAssets(entity).size(); i++) {
+//                event.getGuiGraphics().blit(ResourceLocation.parse(DisplayData.getAbilityTexture(DisplayData.getAbilityAssets(entity),i)), _x+i*(16), _y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+//            }
+
+			// new
+			for (int i = 0; i < 5; i++) {
+				event.getGuiGraphics().blit(ResourceLocation.parse(DisplayData.getFruitAbilityIcon(entity,i)), _x+i*(16), _y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+			}
+
 			ArrayList<AtomicReference<Double>> abilityRefs = new ArrayList<>();
 			
 			abilityRefs.add(new AtomicReference<Double>());
@@ -92,7 +85,7 @@ public class AbilitiesOverlay {
 	
 			// must not have cd
 			for (int i = 0; i < abilityRefs.size(); i++) {
-				if(abilityRefs.get(i).get() != 0 && fruit.getFruitArrayList(entity).size()>=i){
+				if(abilityRefs.get(i).get() != 0){
                 event.getGuiGraphics().blit(ResourceLocation.parse("blocky_seas:textures/screens/cooldown_icon.png"), _x+i*(16), _y, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
 				}
             }

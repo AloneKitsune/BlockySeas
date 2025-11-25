@@ -1,4 +1,4 @@
-package com.alone.blocky_seas.item;
+package com.alone.blocky_seas.item.fruits;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.Rarity;

@@ -1,8 +1,7 @@
 package com.alone.blocky_seas.network;
 
 import com.alone.blocky_seas.BlockySeas;
-import com.alone.blocky_seas.procedures.keypressed.Ability2OnKeyPressedProcedure;
-import com.alone.blocky_seas.procedures.keypressed.Ability3OnKeyPressedProcedure;
+import com.alone.blocky_seas.procedures.keypressed.Ability5OnKeyPressedProcedure;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -14,25 +13,25 @@ import net.minecraftforge.network.NetworkEvent;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class Ability3Message {
+public class Ability5Message {
 	int type, pressedms;
 
-	public Ability3Message(int type, int pressedms) {
+	public Ability5Message(int type, int pressedms) {
 		this.type = type;
 		this.pressedms = pressedms;
 	}
 
-	public Ability3Message(FriendlyByteBuf buffer) {
+	public Ability5Message(FriendlyByteBuf buffer) {
 		this.type = buffer.readInt();
 		this.pressedms = buffer.readInt();
 	}
 
-	public static void buffer(Ability3Message message, FriendlyByteBuf buffer) {
+	public static void buffer(Ability5Message message, FriendlyByteBuf buffer) {
 		buffer.writeInt(message.type);
 		buffer.writeInt(message.pressedms);
 	}
 
-	public static void handler(Ability3Message message, Supplier<NetworkEvent.Context> contextSupplier) {
+	public static void handler(Ability5Message message, Supplier<NetworkEvent.Context> contextSupplier) {
 		NetworkEvent.Context context = contextSupplier.get();
 		context.enqueueWork(() -> {
 			pressAction(context.getSender(), message.type, message.pressedms);
@@ -49,13 +48,12 @@ public class Ability3Message {
 		if (!world.hasChunkAt(entity.blockPosition()))
 			return;
 		if (type == 0) {
-
-			Ability3OnKeyPressedProcedure.execute(entity);
+			Ability5OnKeyPressedProcedure.execute(entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		BlockySeas.addNetworkMessage(Ability3Message.class, Ability3Message::buffer, Ability3Message::new, Ability3Message::handler);
+		BlockySeas.addNetworkMessage(Ability5Message.class, Ability5Message::buffer, Ability5Message::new, Ability5Message::handler);
 	}
 }

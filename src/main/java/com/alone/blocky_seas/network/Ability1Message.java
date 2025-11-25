@@ -9,7 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 
-import com.alone.blocky_seas.procedures.Ability1OnKeyPressedProcedure;
+import com.alone.blocky_seas.procedures.keypressed.Ability1OnKeyPressedProcedure;
 import com.alone.blocky_seas.BlockySeas;
 
 import java.util.function.Supplier;

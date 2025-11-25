@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "blocky_seas:orange_berry"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye",
+    "count": 3
+  }
+}

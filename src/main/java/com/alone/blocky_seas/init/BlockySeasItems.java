@@ -14,16 +14,16 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.food.FoodProperties;
 
 import com.alone.blocky_seas.item.WhiteBerry;
-import com.alone.blocky_seas.item.SigilBuggyItem;
-import com.alone.blocky_seas.item.SigilAxeHandItem;
+import com.alone.blocky_seas.item.bossitems.SigilBuggyItem;
+import com.alone.blocky_seas.item.bossitems.SigilAxeHandItem;
 import com.alone.blocky_seas.item.SeaprismShardItem;
-import com.alone.blocky_seas.item.FruitWhirlwindItem;
-import com.alone.blocky_seas.item.FruitSculkItem;
-import com.alone.blocky_seas.item.FruitGameItem;
-import com.alone.blocky_seas.item.FruitBombItem;
+import com.alone.blocky_seas.item.fruits.FruitWhirlwindItem;
+import com.alone.blocky_seas.item.fruits.FruitSculkItem;
+import com.alone.blocky_seas.item.fruits.FruitGameItem;
+import com.alone.blocky_seas.item.fruits.FruitBombItem;
 import com.alone.blocky_seas.item.DarkrootItem;
-import com.alone.blocky_seas.item.DaggerItem;
-import com.alone.blocky_seas.item.CutlassItem;
+import com.alone.blocky_seas.item.weapons.DaggerItem;
+import com.alone.blocky_seas.item.weapons.CutlassItem;
 import com.alone.blocky_seas.BlockySeas;
 
 public class BlockySeasItems {

@@ -1,5 +1,7 @@
 package com.alone.blocky_seas.network;
 
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -27,6 +29,8 @@ import net.minecraft.client.Minecraft;
 
 import com.alone.blocky_seas.BlockySeas;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -74,6 +78,8 @@ public class BlockySeasModVariables {
 			clone.ability5 = original.ability5;
 			clone.haki = original.haki;
 			clone.usingMove = original.usingMove;
+			clone.fruitAbilityList = new ArrayList<>(original.fruitAbilityList);
+
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -119,6 +125,18 @@ public class BlockySeasModVariables {
 		public boolean haki = false;
 		public boolean usingMove = false;
 
+		public List<String> fruitAbilityList = new ArrayList<String>();
+		public List<String> swordAbilityList = new ArrayList<String>();
+
+
+		public PlayerVariables()
+		{
+			for (int i = 0; i < 5; i++) {
+				fruitAbilityList.add("noabilityicon");
+				swordAbilityList.add("noabilityicon");
+			}
+		}
+
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
 				BlockySeas.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> serverPlayer), new PlayerVariablesSyncMessage(this));
@@ -134,6 +152,19 @@ public class BlockySeasModVariables {
 			nbt.putDouble("ability5", ability5);
 			nbt.putBoolean("haki", haki);
 			nbt.putBoolean("usingMove", usingMove);
+
+			ListTag listTag = new ListTag();
+			for (String s : fruitAbilityList) {
+				listTag.add(StringTag.valueOf(s));
+			}
+			nbt.put("fruitAbilityList", listTag);
+
+			listTag = new ListTag();
+			for (String s : swordAbilityList) {
+				listTag.add(StringTag.valueOf(s));
+			}
+			nbt.put("swordAbilityList", listTag);
+
 			return nbt;
 		}
 
@@ -147,6 +178,18 @@ public class BlockySeasModVariables {
 			ability5 = nbt.getDouble("ability5");
 			haki = nbt.getBoolean("haki");
 			usingMove = nbt.getBoolean("usingMove");
+
+			fruitAbilityList.clear();
+			swordAbilityList.clear();
+
+			ListTag listTag = nbt.getList("fruitAbilityList", Tag.TAG_STRING);
+			for (Tag t : listTag) {
+				fruitAbilityList.add(t.getAsString());
+			}
+			listTag = nbt.getList("swordAbilityList", Tag.TAG_STRING);
+			for (Tag t : listTag) {
+				swordAbilityList.add(t.getAsString());
+			}
 		}
 	}
 
@@ -179,6 +222,10 @@ public class BlockySeasModVariables {
 					variables.ability5 = message.data.ability5;
 					variables.haki = message.data.haki;
 					variables.usingMove = message.data.usingMove;
+
+					variables.fruitAbilityList = new ArrayList<>(message.data.fruitAbilityList);
+					variables.swordAbilityList = new ArrayList<>(message.data.swordAbilityList);
+
 				}
 			});
 			context.setPacketHandled(true);

@@ -1,8 +1,7 @@
-package com.alone.blocky_seas.procedures;
+package com.alone.blocky_seas.procedures.keypressed;
 
+import com.alone.blocky_seas.abilities.Abilities;
 import net.minecraft.world.entity.Entity;
-
-import com.alone.blocky_seas.fruitdata.FruitAbilities;
 
 public class Ability2OnKeyPressedProcedure {
 	public static void execute(Entity entity) {
@@ -10,6 +9,6 @@ public class Ability2OnKeyPressedProcedure {
 			return;
 		Entity player;
 		player = entity;
-		FruitAbilities.useAbility2(player);
+		Abilities.execute(player,2);
 	}
 }

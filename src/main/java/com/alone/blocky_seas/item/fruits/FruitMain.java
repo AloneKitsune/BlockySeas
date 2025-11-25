@@ -1,4 +1,4 @@
-package com.alone.blocky_seas.item;
+package com.alone.blocky_seas.item.fruits;
 
 import net.minecraft.world.item.Item;
 

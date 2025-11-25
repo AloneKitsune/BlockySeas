@@ -1,4 +1,4 @@
-package com.alone.blocky_seas.fruitdata;
+package com.alone.blocky_seas.abilitydisplaydata;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,7 @@ public class FruitAbilities
 	public static ArrayList<String> blank_abilityTextures = new ArrayList<>();
 	public static ArrayList<String> sculk_abilityTextures = new ArrayList<>();
 	public static ArrayList<String> game_abilityTextures = new ArrayList<>();
-	
+
 
 	public FruitAbilities()
 	{
@@ -93,7 +93,7 @@ public class FruitAbilities
 
 	public static void useAbility1(Entity entity)
 	{
-		if(HelperMethods.usingMove(entity))
+		if(HelperMethods.usingMove(entity) || HelperMethods.holdingAbilityWeapon(entity))
 		{return;}
 		
 		if(entity.level().getLevelData().getGameRules().getBoolean(BlockySeasGameRules.DO_SEASICKNESS) && entity.isInWater() && !(new Object() {
@@ -210,7 +210,7 @@ public class FruitAbilities
 
 	public static void useAbility2(Entity entity)
 	{
-		if(HelperMethods.usingMove(entity))
+		if(HelperMethods.usingMove(entity) || HelperMethods.holdingAbilityWeapon(entity))
 		{return;}
 		if(entity.level().getLevelData().getGameRules().getBoolean(BlockySeasGameRules.DO_SEASICKNESS) && entity.isInWater() && !(new Object() {
 			public boolean checkGamemode(Entity _ent) {
@@ -263,13 +263,12 @@ public class FruitAbilities
 				
 				if (entity == null)
 					return;
-				{
-					boolean _setval = true;
-					entity.getCapability(com.alone.blocky_seas.network.BlockySeasModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.usingMove = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
+				boolean _setval = true;
+				entity.getCapability(com.alone.blocky_seas.network.BlockySeasModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.usingMove = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+
 				Bombabil2Procedure.execute(entity.level(),entity.getX(),entity.getY(),entity.getZ(),entity);
 				
 

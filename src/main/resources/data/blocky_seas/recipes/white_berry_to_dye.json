@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "blocky_seas:white_berry"
+    }
+  ],
+  "result": {
+    "item": "minecraft:white_dye",
+    "count": 3
+  }
+}

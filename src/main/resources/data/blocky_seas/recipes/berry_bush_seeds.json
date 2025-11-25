@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blocky_seas:red_berry"
+    },
+    {
+      "item": "blocky_seas:orange_berry"
+    },
+    {
+      "item": "blocky_seas:yellow_berry"
+    },
+    {
+      "item": "blocky_seas:green_berry"
+    },
+    {
+      "item": "blocky_seas:blue_berry"
+    },
+    {
+      "item": "blocky_seas:purple_berry"
+    },
+    {
+      "item": "blocky_seas:pink_berry"
+    },
+    {
+      "item": "blocky_seas:white_berry"
+    },
+    {
+      "item": "blocky_seas:black_berry"
+    }
+  ],
+  "result": {
+    "item": "blocky_seas:berry_bush",
+    "count": 4
+  }
+}
